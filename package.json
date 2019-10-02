@@ -6,9 +6,7 @@
   "bin": {
     "pnd": "./cli.js"
   },
-  "scripts": {
-    
-  },
+  "scripts": {},
   "author": "jsanchesleao@gmail.com",
   "license": "ISC",
   "dependencies": {
