@@ -1,0 +1,17 @@
+{
+  "name": "pnd",
+  "version": "1.0.0",
+  "description": "A file encrypter/decrypter for paranoid people",
+  "main": "src/index.js",
+  "bin": {
+    "pnd": "./cli.js"
+  },
+  "scripts": {
+    
+  },
+  "author": "jsanchesleao@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "tbrex": "^1.1.2"
+  }
+}
