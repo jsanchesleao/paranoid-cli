@@ -1,11 +1,14 @@
 const {Switcher} = require('tbrex');
 
 const LockCommand = require('./commands/lockCommand');
-const UnockCommand = require('./commands/unlockCommand');
+const UnlockCommand = require('./commands/unlockCommand');
+
+const ContactCommand = require('./commands/contactCommand');
 
 const options = {
   'lock': new LockCommand(),
-  'unlock':  new UnockCommand()
+  'unlock':  new UnlockCommand()
+  //  'contact': new ContactCommand()
 }
 
 module.exports = new Switcher({options});

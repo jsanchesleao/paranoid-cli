@@ -12,8 +12,9 @@ class UnlockCommand extends Command {
     }
 
     const password = args.password || args.p || (await this.requestPassword());
+    const output = args.stdout ? process.stdout : null;
     try {
-      await unlockFile({file, password});
+      await unlockFile({file, password, output});
       return 0;
     }
     catch(err) {

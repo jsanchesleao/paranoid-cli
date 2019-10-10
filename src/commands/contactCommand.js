@@ -2,23 +2,29 @@ const {Command, Switcher} = require('tbrex');
 
 class ContactCommand extends Command {
 
+  constructor() {
+    super();
+    this.switcher = new Switcher({
+      prompt: 'contact commands:',
+      options: {
+        'add': new AddContactCommand(),
+        'rm': new RemoveContactCommand()
+      }
+    });
+  }
+
   async exec(args, out) {
-    switch(args._[0]) {
-      case 'add':
-        return new AddContactCommand().exec(args, out)
-      case 'rm':
-        return new RemoveContactCommand().exec(args.out)
-      default:
-        return this.showHelp(out);
-    }
+    this.switcher.run(args);
   }
 
   describe() {
     return `manages your contacts and their public keys`
   }
+}
 
-  showHelp(out) {
-    out.send('usage: command [add|rm] [--key <key>] [--name <name>]');
+class HelpContactCommand extends Command {
+  async exec(args, out) {
+    out.send('usage: contact [add|rm] [--key <key>] [--name <name>]');
   }
 }
 

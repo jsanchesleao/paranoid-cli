@@ -12,6 +12,7 @@ class LockCommand extends Command {
     }
 
     const password = args.password || args.p || (await this.requestPassword());
+    const output = args.stdout ? process.stdout : null;
 
     try {
       await lockFile({file, password});
