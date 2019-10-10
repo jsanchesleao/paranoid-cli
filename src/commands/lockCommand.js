@@ -15,7 +15,7 @@ class LockCommand extends Command {
     const output = args.stdout ? process.stdout : null;
 
     try {
-      await lockFile({file, password});
+      await lockFile({file, password, output});
       return 0;
     }
     catch(err) {
