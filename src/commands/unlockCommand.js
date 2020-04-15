@@ -30,7 +30,7 @@ class UnlockCommand extends Command {
     const {password} = await inquirer.prompt([{
       type: 'password',
       name: 'password',
-      message: 'Enter a password to lock the file:'
+      message: 'Enter the password to unlock the file:'
     }])
     return password;
   }
